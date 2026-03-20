@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Fortnite",
+    "category": "Base game",
+    "info": "Feudal Gotham’s Dark Night, Ninja Knight Batman, and the malicious wildcard Karuta Harley Quinn strike with a vengeance.",
+    "src": "../src/assets/img/game-cards/fortnite.png",
+    "alt": "game",
+    "link": "#"
+  },
+   {
+    "id": 2,
+    "title": "Fortnite 2",
+    "category": "Base game",
+    "info": "BANG! Take your shot with bounty hunters Spike Spiegel and Faye Valentine from COWBOY BEBOP.",
+    "src": "../src/assets/img/game-cards/fortnite2.png",
+    "alt": "game",
+    "link": "#"
+  },
+   {
+    "id": 3,
+    "title": "Fortnite 3",
+    "category": "Base game",
+    "info": "My Hero Academia’s League of Villains emerges in Fortnite!",
+    "src": "../src/assets/img/game-cards/fortnite3.png",
+    "alt": "game",
+    "link": "#"
+  }
+]

@@ -1,0 +1,121 @@
+.container {
+   min-height: 68vh;
+   max-width: 1440px;
+   margin: 0 auto;
+   padding: 36px 0;
+}
+.title {
+   color: var(--color-white);
+   font-size: 48px;
+   font-weight: 700;
+   margin-bottom: 12px;
+}
+.titleBox {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 32px;
+   border-bottom: 1px solid var(--color-white);
+}
+.totalPrice {
+   border: 1px solid var(--color-white);
+   border-radius: 20px;
+   padding: 6px 12px;
+}
+.totalPrice span {
+   color: var(--color-white);
+   font-size: 16px;
+   font-weight: 700;
+}
+.gameBox {
+   display: flex;
+   background: #393E46;
+   border-radius: 8px;
+   padding: 18px 20px;
+   width: 920px;
+   margin-bottom: 32px;
+}
+.gameImg {
+   width: 126px;
+   height: 166px;
+   border-radius: 8px;
+   margin-right: 24px;
+}
+.gameDescription {
+   display: flex;
+   flex-direction: column;
+   width: 260px;
+   justify-content: space-around;
+   align-items: space-around;
+}
+.genre {
+   background: #4E555F;
+   border-radius: 4px;
+   color: var(--color-white);
+   font-size: 12px;
+   font-weight: normal;
+   width: fit-content;
+   padding: 4px 8px;
+   margin-bottom: 6px;
+}
+.name {
+   color: var(--color-white);
+   font-size: 28px;
+   font-weight: 900;
+   margin-bottom: 24px;
+}
+.rowBox {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 12px;
+}
+.rowBox span {
+   display: inline-block;
+   color: var(--color-white);
+}
+.settings {
+   width: 260px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin-left: auto;
+}
+.price {
+   color: var(--color-white);
+   font-size: 16px;
+   font-weight: 900;
+   align-self: end;
+   margin-right: 30px;
+}
+.bttnBox {
+   display: flex;
+   justify-content: space-between;
+}
+.sidebarTotalPrice {
+   /* border: 2px solid yellowgreen; */
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   margin-bottom: auto;
+   width: 400px;
+}
+.sidebarTotalPrice p {
+   margin-bottom: 12px;
+}
+.priceHighlight {
+   color: var(--color-white);
+   font-size: 24px;
+   font-weight: 900;
+}
+.amountHighlight {
+   color: var(--color-white);
+   font-size: 16px;
+   font-weight: 500;
+}
+.disclaimer {
+   color: var(--color-white);
+   font-size: 14px;
+   font-weight: 500;
+}
+

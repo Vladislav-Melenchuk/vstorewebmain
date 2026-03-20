@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "The End of the Sun",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/end-of-sun.png",
+    "altText": "game",
+    "link": "#",
+    "priceBefore": "1030",
+    "priceAfter": "515"
+  },
+   {
+    "id": 2,
+    "title": "Ranch Simulator",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/ranch-simulator.png",
+    "altText": "game",
+    "link": "#",
+    "priceBefore": "170",
+    "priceAfter": "70"
+  },
+   {
+    "id": 3,
+    "title": "FARCRY 3",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/farcry3.png",
+    "altText": "game",
+    "link": "#",
+    "priceBefore": "720",
+    "priceAfter": "515"
+  },
+   {
+    "id": 4,
+    "title": "FARCRY 4",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/farcry4.png",
+    "altText": "game",
+    "link": "#",
+    "priceBefore": "1120",
+    "priceAfter": "815"
+  },
+   {
+    "id": 5,
+    "title": "FARCRY 5",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/farcry5.png",
+    "altText": "game",
+    "link": "#",
+    "priceBefore": "1620",
+    "priceAfter": "810"
+  },
+   {
+    "id": 6,
+    "title": "FARCRY 6",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/farcry6.png",
+    "altText": "game",
+    "link": "#",
+    "priceBefore": "2070",
+    "priceAfter": "1010"
+  }
+]

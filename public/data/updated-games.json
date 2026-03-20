@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Black Myth: Wukong",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/black-myth-wukong.png",
+    "altText": "game",
+    "link": "#",
+    "price": "1629"
+  },
+  {
+    "id": 2,
+    "title": "Star Trek Online",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/star-trek-online.png",
+    "altText": "game",
+    "link": "#",
+    "price": "Free"
+  },
+  {
+    "id": 3,
+    "title": "Disney Speedstorm",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/disney-speedstorm.png",
+    "altText": "game",
+    "link": "#",
+    "price": "Free"
+  },
+  {
+    "id": 4,
+    "title": "Honkai: Star Rail",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/honkai-star-rail.png",
+    "altText": "game",
+    "link": "#",
+    "price": "Free"
+  },
+  {
+    "id": 5,
+    "title": "Destiny 2",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/Destiny-2.png",
+    "altText": "game",
+    "link": "#",
+    "price": "Free"
+  },
+  {
+    "id": 6,
+    "title": "Honkai Impact 3rd",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/honkai-impact-3rd.png",
+    "altText": "game",
+    "link": "#",
+    "price": "Free"
+  }
+]

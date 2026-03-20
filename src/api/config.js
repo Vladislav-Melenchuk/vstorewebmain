@@ -1,0 +1,1 @@
+export const API = 'https://vstoreapp-hrhafegehfhkdshc.swedencentral-01.azurewebsites.net/api';

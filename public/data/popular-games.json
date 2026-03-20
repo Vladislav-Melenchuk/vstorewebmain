@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Grand Theft Auto V: Premium Edition",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/gta.png",
+    "altText": "game",
+    "link": "#",
+    "price": "629"
+  },
+  {
+    "id": 2,
+    "title": "VALORANT",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/valorant.png",
+    "altText": "game",
+    "link": "#",
+    "price": "Free"
+  },
+  {
+    "id": 3,
+    "title": "Witch It",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/witch-it.png",
+    "altText": "game",
+    "link": "#",
+    "price": "369"
+  },
+  {
+    "id": 4,
+    "title": "Crosshair V2",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/crosshair-v2.png",
+    "altText": "game",
+    "link": "#",
+    "price": "Free"
+  },
+  {
+    "id": 5,
+    "title": "Farming Simulator 22",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/farming-simulator22.png",
+    "altText": "game",
+    "link": "#",
+    "price": "459"
+  },
+  {
+    "id": 6,
+    "title": "Zenless Zone Zero",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/zenless-zone-zero.png",
+    "altText": "game",
+    "link": "#",
+    "price": "Free"
+  }
+]

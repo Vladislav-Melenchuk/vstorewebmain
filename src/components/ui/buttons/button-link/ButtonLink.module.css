@@ -1,0 +1,25 @@
+.button {
+   padding: 10px 12px;
+   display: flex;
+   align-items: center;
+   border-radius: 4px;
+   margin-top: auto;
+   border: none;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.button:hover {
+   cursor: pointer;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.button:active {
+   transform: scale(0.95);
+}
+.title {
+   margin-right: 6px;
+   display: inline-block;
+   font-weight: 700;
+   font-size: 16px;
+}
+
+.primary { background-color: var(--color-green); color: var(--color-black); }
+.secondary { background-color: #393E46; color: var(--color-white); align-self: flex-start;}

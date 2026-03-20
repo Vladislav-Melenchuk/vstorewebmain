@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "The End of the Sun",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/end-of-sun.png",
+    "altText": "game",
+    "link": "#",
+    "price": "100"
+  },
+  {
+    "id": 2,
+    "title": "Apex Legends",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/apex-legends.png",
+    "altText": "game",
+    "link": "#",
+    "price": "Free"
+  },
+  {
+    "id": 3,
+    "title": "The were cleaner",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/the-were-cleaner.png",
+    "altText": "game",
+    "link": "#",
+    "price": "325"
+  },
+  {
+    "id": 4,
+    "title": "The Emberlands",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/the-emberlands.png",
+    "altText": "game",
+    "link": "#",
+    "price": "355"
+  },
+  {
+    "id": 5,
+    "title": "Kingdom Come Deliverance 2",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/kingdom-come.png",
+    "altText": "game",
+    "link": "#",
+    "price": "1030"
+  },
+  {
+    "id": 6,
+    "title": "Final Fantasy 7",
+    "category": "Base game",
+    "src": "../src/assets/img/game-cards/final-fantasy.png",
+    "altText": "game",
+    "link": "#",
+    "price": "975"
+  }
+]

@@ -1,0 +1,23 @@
+:root {
+   /*--color-green: #00A046;*/
+   --color-white: #eeeeee;
+   --color-green: #7BC74D;
+   --color-black: #222831;
+   --bg-header: linear-gradient(to right, #373C43, #25282D);
+   --bg-body: linear-gradient(
+      to right,
+      #222831 0%, 
+      #2c3a2f 100% 
+   );
+     --bg-footer: linear-gradient(
+      to right,
+      #3a4442 0%,
+      #222831 30%, 
+      #222831 50%, 
+      #222831 70%, 
+      #3a4442 85%,
+      #3a4442 100% 
+   );
+
+
+}

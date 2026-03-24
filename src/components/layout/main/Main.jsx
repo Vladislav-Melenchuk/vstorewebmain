@@ -31,8 +31,8 @@ const Main = () => {
    return (
       <main className={styles.container}>
          <TopGame />
-         <Advertising {...propsData[0]} type="fullPrice"/>
          <Advertising {...propsData[1]} type="sale"/>
+         <Advertising {...propsData[0]} type="fullPrice"/>
          <Featured {...propsData[2]}/>
          <FreeGames />
          <Mobile/>

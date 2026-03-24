@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const SocialMediaContainer = styled.ul`
    display: flex;
+   flex-direction: row;
    gap: 20px;
    width: fit-content;
    align-items: center;

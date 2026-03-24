@@ -5,13 +5,35 @@ import styles from './Game.module.css'
 import img from '../../assets/img/general-img/img01.png'
 import {formatedDate} from '../../utils/formatedDate.js'
 import Button from '../../components/ui/buttons/button/Button.jsx'
+import { addToCart } from '../../utils/cart.js'
+import { addToWishlist } from '../../utils/wishlist.js'
+import { useToast } from '../../components/ui/toast/Toast.jsx'
+import { useContext } from 'react'
+import { AuthContext } from '../../context/AuthContext.jsx'
 
 const Game = () => {
-
    const { id } = useParams();
    const location = useLocation();
 
    const [game, setGame] = useState(location.state?.game || null);
+   const { token } = useContext(AuthContext);
+   const { showToast } = useToast();
+   const [isLiked, setIsLiked] = useState(false);
+
+   const handleAddToCart = async (e) => {
+      e.preventDefault();
+      await addToCart(game, token);
+      showToast('Added to cart 🛒', 'success');
+      console.log('Added to cart');
+  };
+
+  const handleAddToWishlist = async (e) => {
+      e.preventDefault();
+      await addToWishlist(game, token);
+      setIsLiked(prev => !prev);
+      showToast(isLiked ? 'Removed from wishlist 💔' : 'Added to wishlist ❤️','info');
+      console.log('Added to wishlist');
+  };
 
    // если нет state — грузим с сервера
    useEffect(() => {
@@ -50,8 +72,8 @@ const Game = () => {
                   </div>
 
                   <div className={styles.rowDescription}>
-                     <Button title='Add to cart' variant='primary' size='large' onClick={() => addToCart(game)}/>
-                     <Button title='Wishlist' variant={'secondary'} size='large' onClick={() => addToWishlist(game)}/>    
+                     <Button title='Add to cart' variant='primary' size='large' onClick={handleAddToCart}/>
+                     <Button title='Wishlist' variant={'secondary'} size='large' onClick={handleAddToWishlist}/>    
                   </div>
                </div>
             </div>

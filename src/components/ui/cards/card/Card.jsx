@@ -1,29 +1,33 @@
 import styles from './Card.module.css'
 import { Link } from 'react-router-dom'
 import { FaShoppingCart, FaHeart } from 'react-icons/fa'
+import { useState, useContext } from 'react'
+import { AuthContext } from '../../../../context/AuthContext.jsx' 
+import { addToCart } from '../../../../utils/cart.js'
+import { addToWishlist } from '../../../../utils/wishlist.js'
+import { useToast } from '../../toast/Toast.jsx'
 
 const Card = ({id, coverImageUrl, description, developer, title, price, finalPrice, discountPercent, releaseDate, publisher }) => {
 
    const game = { id, coverImageUrl, description, developer, title, price, finalPrice, discountPercent, releaseDate, publisher };
+   const { token } = useContext(AuthContext);
+   const { showToast } = useToast();
+   const [isLiked, setIsLiked] = useState(false);
 
-   const addToCart = (e) => {
-      e.preventDefault(); // чтобы не переходило по Link
-      
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      if (!cart.find(item => item.id === game.id)) {
-         cart.push(game);
-      }
-      cart.push(game);
-      localStorage.setItem('cart', JSON.stringify(cart));
-   };
+  const handleAddToCart = async (e) => {
+    e.preventDefault();
+    await addToCart(game, token);
+    showToast('Added to cart 🛒', 'success');
+    console.log('Added to cart');
+  };
 
-   const addToWishlist = (e) => {
-      e.preventDefault();
-
-      const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-      wishlist.push(game);
-      localStorage.setItem('wishlist', JSON.stringify(wishlist));
-   };
+   const handleAddToWishlist = async (e) => {
+    e.preventDefault();
+    await addToWishlist(game, token);
+    setIsLiked(prev => !prev);
+    showToast(isLiked ? 'Removed from wishlist 💔' : 'Added to wishlist ❤️','info');
+    console.log('Added to wishlist');
+  };
 
    return (
       <Link to={`/game/${id}`} state={{ game }} className={styles.container}>
@@ -34,8 +38,9 @@ const Card = ({id, coverImageUrl, description, developer, title, price, finalPri
             />
 
             <div className={styles.actions}>
-               {/* <FaShoppingCart  onClick={addToCart} className={styles.cartImg} /> */}
-               <FaHeart onClick={addToWishlist} className={styles.wishlistImg} />
+               <FaShoppingCart  onClick={handleAddToCart} className={styles.cartImg} />
+               <FaHeart onClick={handleAddToWishlist}
+               className={`${styles.wishlistImg} ${isLiked ? styles.active : ''}`} />
             </div>
          </div>
    
@@ -70,8 +75,6 @@ const Card = ({id, coverImageUrl, description, developer, title, price, finalPri
                   )}
                </div>
             </div>
-
-        
 
          </div>    
       </Link>

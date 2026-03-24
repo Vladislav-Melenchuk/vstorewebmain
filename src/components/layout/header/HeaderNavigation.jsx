@@ -9,6 +9,7 @@ const NavigationBox = styled.nav`
 const NavList = styled.ul`
   list-style: none;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin: 0;
   padding: 0;

@@ -1,0 +1,134 @@
+.container {
+  height: 100vh;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 36px;
+}
+.title {
+  color: var(--color-white);
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.titleBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--color-white);
+}
+.totalCount {
+  border: 1px solid var(--color-white);
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+.totalCount span {
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 700;
+}
+.rowBoxList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ul {
+  gap: 32px;
+}
+.gameBox {
+  display: flex;
+  background: #393E46;
+  border-radius: 8px;
+  padding: 18px 20px;
+  width: 1020px;
+}
+.gameImg {
+  width: 126px;
+  height: 166px;
+  border-radius: 8px;
+  margin-right: 24px;
+  object-fit: cover;
+}
+.gameDescription {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.genre {
+  background: #4E555F;
+  border-radius: 4px;
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: normal;
+  width: fit-content;
+  padding: 4px 8px;
+  margin-bottom: 6px;
+}
+.name {
+  color: var(--color-white);
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+.rowBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.rowBox span {
+  display: inline-block;
+  color: var(--color-white);
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+.settings {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: auto;
+}
+.price {
+  /* border: 1px solid var(--color-white); */
+  /* border-radius: 24px; */
+  padding: 6px 12px;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+  margin-right: 24px;
+}
+.bttnBox {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid orange;
+  transition: 3s ease;
+}
+.bttnBox:hover {
+ cursor: pointer;
+}
+.bttnBox:active {
+ transform: scale(0.95);
+}
+.oldPrice {
+  color: var(--color-white);
+  text-decoration: line-through;
+  opacity: 0.6;
+  font-size: 14px;
+}
+.newPrice {
+  color: var(--color-green);
+  font-weight: 700;
+  font-size: 18px;
+}
+.normalPrice {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 18px;
+}

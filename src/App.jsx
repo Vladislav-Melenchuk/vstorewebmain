@@ -10,6 +10,8 @@ import Game from './pages/game/Game.jsx'
 import ProtectedRoute from './components/protected-route/ProtectedRoute.jsx'
 
 import Layout from './components/layout/Layout.jsx'
+import Wishlist from './pages/wishlist/Wishlist.jsx'
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <Route index  element={<Home />} />
           <Route path='/cart' element={<Cart />}/>
           <Route path='/game/:id' element={<Game />}/>
+          <Route path='/wishlist' element={<Wishlist />}/>
 
           <Route path='/profile' element={
             <ProtectedRoute>

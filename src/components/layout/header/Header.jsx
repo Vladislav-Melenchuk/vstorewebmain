@@ -1,16 +1,14 @@
 import styles from './Header.module.css';
 import '../../../styles/variables.css';
-
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-
 import { AuthContext } from '../../../context/AuthContext';
-
+import { useState } from 'react'
+import LanguageModal from '../../modals/LanguageModal.jsx'
 import userIcon from '../../../assets/icons/header-icons/user.svg';
 import favoriteIcon from '../../../assets/icons/header-icons/favorite.svg';
 import basketIcon from '../../../assets/icons/header-icons/basket.svg';
 import globeIcon from '../../../assets/icons/header-icons/globe.svg';
-
 import { Logo } from './Logo.jsx';
 import { HeaderNavigation } from './HeaderNavigation.jsx';
 import { Search } from './Search.jsx';
@@ -19,6 +17,7 @@ import { HeaderActions } from './HeaderActions.jsx';
 const Header = () => {
   const navigate = useNavigate();
   const { token, user, logout } = useContext(AuthContext);
+  const [langOpen, setLangOpen] = useState(false)
 
   const links = [
     { text: 'Discover', path: '/' },
@@ -30,8 +29,10 @@ const Header = () => {
     { alt: 'user-icon', src: userIcon, to: token ? '/profile' : '/auth' },
     { alt: 'favorite-icon', src: favoriteIcon, to: '/wishlist' },
     { alt: 'basket-icon', src: basketIcon, to: '/cart' },
-    { alt: 'globe-icon', src: globeIcon, to: '/' },
+    { alt: 'globe-icon', src: globeIcon, type: 'modal' }
+    // { alt: 'globe-icon', src: globeIcon, to: '/' },
   ];
+  
 
   const handleUserClick = () => {
     if (token) {
@@ -51,6 +52,7 @@ const Header = () => {
   };
 
   return (
+  <>
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logoNavInputWrapper}>
@@ -65,9 +67,15 @@ const Header = () => {
           onSignIn={handleSignIn}
           onLogout={handleLogout}
           isAuth={!!token}
+          onOpenLang={() => setLangOpen(true)}
         />
       </div>
     </header>
+
+    <LanguageModal
+      isOpen={langOpen}
+      onClose={() => setLangOpen(false)}/>
+  </>
   );
 };
 

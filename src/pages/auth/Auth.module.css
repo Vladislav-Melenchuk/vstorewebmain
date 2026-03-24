@@ -6,7 +6,10 @@
    -moz-background-size: cover;   
    -webkit-background-size: cover; 
    background-image: url('../../assets/img/general-img/auth-bg.png');
-   padding-top: 200px;
+   border: 2px solid orange;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 .wrapper {
    width: 830px;

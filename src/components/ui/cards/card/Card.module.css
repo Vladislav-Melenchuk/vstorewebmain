@@ -10,10 +10,10 @@
    transition: transform 0.3s ease, box-shadow 0.3s ease;
    text-decoration: none;
    color: inherit;
+   cursor: pointer;
 }
 .container:hover {
    transform: scale(1.03);
-   cursor: pointer;
 }
 .image{
    height: 236px;
@@ -87,7 +87,6 @@
 }
 
 /* new */
-
 .imageWrapper {
    position: relative;
 }
@@ -106,7 +105,9 @@
    transition: 0.2s;
    cursor: pointer;
 }
+.active {
+  color: red;
+}
 .cartImg:active, .wishlistImg:active {
    transform: scale(1.05);
-   color: red;
 }

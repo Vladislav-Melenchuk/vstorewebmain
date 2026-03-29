@@ -48,7 +48,7 @@ const Cart = () => {
 
          <div className={styles.rowBox}>
          {cartItems.length === 0 ? (
-            <p className={styles.empty}>Cart is empty</p>)
+            <p className={styles.empty}>Cart is empty !</p>)
             : (<ul>
                   {cartItems.map(game => (
                      <li key={game.cartItemId} className={styles.gameBox}>

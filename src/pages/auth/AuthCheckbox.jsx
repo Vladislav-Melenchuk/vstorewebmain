@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Checkbox = styled.div`
    display: flex;
    align-items: flex-start;
-   margin-bottom: 52px;
+   margin-bottom: 16px;
 
    input[type='checkbox'] {
       width: 26px;
@@ -44,4 +44,4 @@ export const AuthCheckbox = ({checked, onChange}) => (
       />
       <label htmlFor='verifyAge'>I am 13 years of age or older and agree to the terms of the Steam Subscriber Agreement and the Valve Privacy Policy.</label>
    </Checkbox>
-)
+);

@@ -7,7 +7,7 @@ import { addToCart } from '../../../../utils/cart.js'
 import { addToWishlist } from '../../../../utils/wishlist.js'
 import { useToast } from '../../toast/Toast.jsx'
 
-const Card = ({id, coverImageUrl, description, developer, title, price, finalPrice, discountPercent, releaseDate, publisher }) => {
+const Card = ({id, coverImageUrl, description, developer, title, price, finalPrice, discountPercent, releaseDate, publisher, size = 'medium' }) => {
 
    const game = { id, coverImageUrl, description, developer, title, price, finalPrice, discountPercent, releaseDate, publisher };
    const { token } = useContext(AuthContext);
@@ -30,12 +30,15 @@ const Card = ({id, coverImageUrl, description, developer, title, price, finalPri
   };
 
    return (
-      <Link to={`/game/${id}`} state={{ game }} className={styles.container}>
+      <Link to={`/game/${id}`} state={{ game }} className={`${styles.container} ${styles[size]}`}>
         <div className={styles.imageWrapper}>
             <img className={styles.image}
                src={coverImageUrl}
                alt={title}
             />
+            {size === 'large' && (
+               <div className={styles.freeRibbon}>FREE</div>
+            )}
 
             <div className={styles.actions}>
                <FaShoppingCart  onClick={handleAddToCart} className={styles.cartImg} />
@@ -46,12 +49,20 @@ const Card = ({id, coverImageUrl, description, developer, title, price, finalPri
    
          <div className={styles.info}>
             <div className={styles.descriptionBox}>
-               <p className={styles.category}>{developer}</p>
-               <h3 className={styles.title}>{title}</h3>
+            {size === 'large' ? (<h3 className={styles.title}>{title}</h3>)
+            : (
+               <>
+                  <p className={styles.category}>{developer}</p>
+                  <h3 className={styles.title}>{title}</h3>
+               </>
+            )}
+               
             </div>
 
+            {size === 'large' ? (
+            <></>
+            ): (
             <div className={styles.priceContainer}>
-               
                {discountPercent && (
                   <span className={styles.discount}>
                      -{discountPercent}%
@@ -75,7 +86,7 @@ const Card = ({id, coverImageUrl, description, developer, title, price, finalPri
                   )}
                </div>
             </div>
-
+         )}
          </div>    
       </Link>
    )

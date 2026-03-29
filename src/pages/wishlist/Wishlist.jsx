@@ -53,7 +53,7 @@ const Wishlist = () => {
 
       <div className={styles.rowBoxList}>
         {wishlistItems.length === 0 ? (
-          <p>Wishlist is empty!</p>
+          <p className={styles.empty}>Wishlist is empty !</p>
         ) : (
           <ul className={styles.gameList}>
             {wishlistItems.map((game) => {

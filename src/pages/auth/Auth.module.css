@@ -6,7 +6,6 @@
    -moz-background-size: cover;   
    -webkit-background-size: cover; 
    background-image: url('../../assets/img/general-img/auth-bg.png');
-   border: 2px solid orange;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -37,7 +36,6 @@
    align-items: center;
    margin: 100px auto;
 }
-
 .successful h2 {
    font-size: 32px;
    font-weight: 900;
@@ -55,8 +53,41 @@
    margin-top: 16px;
    color: var(--color-white);
 }
-
 .switch:hover {
    cursor: pointer;
    text-decoration: underline;
+}
+.agreeError {
+   color: red;;
+   font-size: 16px;
+   margin-bottom: 26px;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  /* background: rgba(0,0,0,0.6); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background-image: url('../../assets/img/general-img/auth-bg.png');
+}
+.modalBox {
+  background: linear-gradient(to bottom, #2B2F35, #25282D);
+  padding: 68px 42px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modalBox h2 {
+  margin-bottom: 12px;
+}
+.modalBox p {
+  margin-bottom: 24px;
+  opacity: 0.8;
 }

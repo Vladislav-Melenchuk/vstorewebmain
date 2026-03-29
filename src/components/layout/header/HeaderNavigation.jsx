@@ -19,6 +19,9 @@ const NavList = styled.ul`
       color: var(--color-white);
       font-size: 16px;
    }
+   li a.active {
+    color: green;
+  }
 `;
 
 export const HeaderNavigation = ({links}) => (
@@ -26,7 +29,9 @@ export const HeaderNavigation = ({links}) => (
       <NavList>
       {links.map((linkItem, index) => (
          <li key={index}>
-            <NavLink to={linkItem.path}>{linkItem.text}</NavLink>
+            <NavLink to={linkItem.path} className={({ isActive }) => isActive ? 'active' : ''}>
+               {linkItem.text}
+            </NavLink>
          </li>
       ))}
       </NavList>

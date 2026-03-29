@@ -1,0 +1,72 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease;
+}
+.modal {
+  width: 340px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(34, 40, 49, 0.92);
+  border: 1px solid rgba(123, 199, 77, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  color: var(--color-white);
+  transform-origin: center;
+  animation: pop 0.3s ease-out;
+}
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.text {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 6px;
+  display: flex;
+  flex-direction: column;
+}
+.text span {
+  display: inline-block;
+}
+/* button */
+.button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: var(--color-green);
+  color: var(--color-black);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.button:hover {
+  transform: scale(1.03);
+}
+
+/* animations */
+@keyframes pop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

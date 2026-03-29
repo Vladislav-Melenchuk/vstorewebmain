@@ -31,24 +31,38 @@ const ActionsWrapper = styled.div`
   }
 `
 
-export const HeaderActions = ({
-  actionIcons,
-  onUserClick,
-  onSignIn,
-  onLogout,
-  isAuth,
-  onOpenLang
-}) => {
+const IconLink = styled(NavLink)`
+  display: flex;
+  align-items: center;
 
-  const handleClick = (icon) => {
-    if (icon.type === 'user') {
-      onUserClick()
-    }
-
-    if (icon.type === 'modal') {
-      onOpenLang()
-    }
+  img {
+    width: 20px;
+    height: 20px;
+    transition: 0.2s ease;
+    opacity: 0.85;
   }
+
+  &:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  &.active img {
+    filter: invert(48%) sepia(79%) saturate(247%) hue-rotate(88deg);
+    opacity: 1;
+  }
+`;
+
+export const HeaderActions = ({ actionIcons, onUserClick, onSignIn, onLogout, isAuth, onOpenLang, onOpenDownload, user }) => {
+  // const handleClick = (icon) => {
+  //   if (icon.type === 'user') {
+  //     onUserClick();
+  //   }
+
+  //   if (icon.type === 'modal') {
+  //     onOpenLang();
+  //   }
+  // };
 
   return (
     <ActionsWrapper>
@@ -58,28 +72,21 @@ export const HeaderActions = ({
 
             {icon.type === 'modal' ? (
               <img
-               src={icon.src}
-               alt={icon.alt}
-               onClick={() => handleClick(icon)}
-              />
-            ) : icon.type === 'user' ? (
-              <img
                 src={icon.src}
                 alt={icon.alt}
-                onClick={() => handleClick(icon)}
+                onClick={onOpenLang}
               />
             ) : (
-              <NavLink to={icon.to}>
+              <IconLink to={icon.to}>
                 <img src={icon.src} alt={icon.alt} />
-              </NavLink>
+              </IconLink>
             )}
-
           </li>
         ))}
       </ul>
 
       <Button
-        title={isAuth ? 'Sign out' : 'Sign in'}
+        title={isAuth ? `Sign out, ${user?.username}` : 'Sign in'}
         onClick={isAuth ? onLogout : onSignIn}
         variant="secondary"
         size="medium"
@@ -89,6 +96,7 @@ export const HeaderActions = ({
         title="Download"
         variant="primary"
         size="medium"
+        onClick={onOpenDownload}
       />
     </ActionsWrapper>
   )

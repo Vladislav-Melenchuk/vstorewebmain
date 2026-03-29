@@ -132,3 +132,8 @@ ul {
   font-weight: 700;
   font-size: 18px;
 }
+.empty {
+  color: var(--color-white);
+  font-size: 26px;
+  font-weight: 500;
+}

@@ -1,7 +1,7 @@
 import styles from './LanguageModal.module.css'
 
 const LanguageModal = ({ isOpen, onClose }) => {
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div className={styles.overlay} onClick={onClose}>
@@ -32,6 +32,6 @@ const LanguageModal = ({ isOpen, onClose }) => {
       </div>
     </div>
   )
-}
+};
 
-export default LanguageModal
+export default LanguageModal;

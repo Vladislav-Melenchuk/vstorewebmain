@@ -94,7 +94,6 @@
    justify-content: space-between;
 }
 .sidebarTotalPrice {
-   /* border: 2px solid yellowgreen; */
    display: flex;
    flex-direction: column;
    height: 100%;
@@ -118,5 +117,10 @@
    color: var(--color-white);
    font-size: 14px;
    font-weight: 500;
+}
+.empty {
+  color: var(--color-white);
+  font-size: 26px;
+  font-weight: 500;
 }
 

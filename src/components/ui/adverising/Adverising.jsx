@@ -13,26 +13,6 @@ const Advertising = ({title, type}) => {
    const { games: saleGames } = useSaleGames();
    const { games: fullPriceGame } = useFullPriceGames();
 
-   const [index, setIndex] = useState(0);
-
-   useEffect(() => {
-    if (games.length === 0) return;
-
-    const intervalId = setInterval(() => {
-      setIndex((prev) => (prev + 1) % games.length);
-    }, 5000);
-
-    return () => clearInterval(intervalId);
-  }, [games.length]);
-
-  const prevSlide = () => {
-    setIndex((prev) => (prev - 1 + games.length) % games.length);
-  };
-
-  const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % games.length);
-  };
-
    const data = type === 'sale' ? saleGames : type === 'fullPrice' ? fullPriceGame : games;
 
    // если showAll = false → только 7 карточек
@@ -56,23 +36,6 @@ const Advertising = ({title, type}) => {
                onClick={() => setShowAll(prev => !prev)}
             />
          )}
-
-         {/* Кнопка назад */}
-         <button className={`${styles.advertisingBtn} ${styles.prev}`} onClick={prevSlide}>‹</button>
-
-         {/* Кнопка вперёд */}
-         <button className={`${styles.advertisingBtn} ${styles.next}`} onClick={nextSlide}>›</button>
-
-        {/* Точки */}
-         <div className={styles.advertisingDots}>
-         {games.map((_, i) => (
-            <button
-               key={i}
-               onClick={() => setIndex(i)}
-               className={`${styles.dot} ${i === index ? 'active' : ''}`}
-            />
-         ))}
-         </div>
       </div>
    )
 }

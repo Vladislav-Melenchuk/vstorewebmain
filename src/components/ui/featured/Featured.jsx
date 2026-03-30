@@ -1,26 +1,33 @@
-import { useState, useEffect } from 'react'
+import { useMemo } from 'react'
 import styles from './Featured.module.css'
 import FeaturedCard from '../cards/featured-card/FeaturedCard.jsx'
+import { useGames } from '../../../hooks/useGames'
 
-const Featured = ({data}) => {
+const Featured = () => {
+   const { games, loading } = useGames();
 
-   const [cardsFeatured, setCardsFeatured] = useState([]);
-   
-   useEffect(() => {
-      fetch(data)
-      .then((res) => res.json())
-      .then((data) => setCardsFeatured(data))
-      .catch((err) => console.error("Ошибка загрузки JSON:", err));
+   const cardsFeatured = useMemo(() => {
+      if (!games.length) return [];
+      return [...games]
+         .sort(() => 0.5 - Math.random())
+         .slice(0, 3);
+   }, [games]);
 
-   },[data]);
+   if (loading) return <div>Loading...</div>;
 
    return (
       <div className={styles.container}>
-         <ul>
-            {cardsFeatured.map((card, index) => (
-               <li key={index}>
-                  <FeaturedCard {...card}/>
-               </li>
+        <ul>
+         {cardsFeatured.map((card) => (
+            <li key={card.id}>
+               <FeaturedCard
+                  game={card}
+                  src={card.coverImageUrl}
+                  title={card.title}
+                  alt={card.title}
+                  info={card.description}
+               />
+            </li>
             ))}
          </ul>
       </div>

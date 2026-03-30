@@ -8,13 +8,13 @@ import { useSaleGames } from '../../../hooks/useSaleGames'
 import { useFullPriceGames } from '../../../hooks/useFullPriceGames'
 
 const AdvertisingSlider = ({ title, type }) => {
-  const [showAll, setShowAll] = useState(false)
+  const [showAll, setShowAll] = useState(false);
 
-  const { games } = useGames()
-  const { games: saleGames } = useSaleGames()
-  const { games: fullPriceGame } = useFullPriceGames()
+  const { games } = useGames();
+  const { games: saleGames } = useSaleGames();
+  const { games: fullPriceGame } = useFullPriceGames();
 
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
 
   const data =
     type === 'sale'

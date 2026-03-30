@@ -1,5 +1,4 @@
 :root {
-   /* --color-green: #00A046; */
    --color-white: #eeeeee;
    --color-green: #7BC74D;
    --color-black: #222831;
@@ -18,6 +17,4 @@
       #3a4442 85%,
       #3a4442 100% 
    );
-
-
 }

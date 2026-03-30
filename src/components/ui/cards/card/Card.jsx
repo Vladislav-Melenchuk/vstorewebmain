@@ -6,6 +6,7 @@ import { AuthContext } from '../../../../context/AuthContext.jsx'
 import { addToCart } from '../../../../utils/cart.js'
 import { addToWishlist } from '../../../../utils/wishlist.js'
 import { useToast } from '../../toast/Toast.jsx'
+import { useEffect } from 'react';
 
 const Card = ({id, coverImageUrl, description, developer, title, price, finalPrice, discountPercent, releaseDate, publisher, size = 'medium' }) => {
 
@@ -20,21 +21,43 @@ const Card = ({id, coverImageUrl, description, developer, title, price, finalPri
     showToast('Added to cart 🛒', 'success');
     console.log('Added to cart');
   };
+  useEffect(() => {
+   const stored = JSON.parse(localStorage.getItem('wishlist')) || [];
+   setIsLiked(stored.includes(id));
+   }, [id]);
 
-   const handleAddToWishlist = async (e) => {
-    e.preventDefault();
-    await addToWishlist(game, token);
-    setIsLiked(prev => !prev);
-    showToast(isLiked ? 'Removed from wishlist 💔' : 'Added to wishlist ❤️','info');
-    console.log('Added to wishlist');
-  };
+const handleAddToWishlist = async (e) => {
+  e.preventDefault();
+
+  await addToWishlist(game, token);
+
+  setIsLiked(prev => {
+      const newState = !prev;
+
+      const stored = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+      let updated;
+
+      if (newState) {
+         updated = [...stored, game.id];
+      } else {
+         updated = stored.filter(id => id !== game.id);
+      }
+
+      localStorage.setItem('wishlist', JSON.stringify(updated));
+
+      return newState;
+   });
+
+   showToast(isLiked ? 'Removed from wishlist 💔' : 'Added to wishlist ❤️','info');
+   };
 
    return (
       <Link to={`/game/${id}`} state={{ game }} className={`${styles.container} ${styles[size]}`}>
         <div className={styles.imageWrapper}>
             <img className={styles.image}
                src={coverImageUrl}
-               alt={title}
+               alt={title}ч
             />
             {size === 'large' && (
                <div className={styles.freeRibbon}>FREE</div>

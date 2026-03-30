@@ -63,6 +63,7 @@
    justify-self: self-end;
    margin-top: auto;
    min-height: 40px;
+   width: 100%;
 }
 .discount {
    background: var(--color-green);

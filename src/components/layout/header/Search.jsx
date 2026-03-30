@@ -32,10 +32,10 @@ const SearchWrapper = styled.div`
    }
 `;
 
-export const Search = () => (
-   <SearchWrapper>
+export const Search = ({ placeholder = 'search store', className }) => (
+   <SearchWrapper className={className}>
       <img src={searchIcon} alt="search icon"/>
       <input type='text'
-             placeholder='search store'/>
+             placeholder={placeholder}/>
    </SearchWrapper>
 )

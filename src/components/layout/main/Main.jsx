@@ -19,7 +19,7 @@ const Main = () => {
          title: 'Winter Sale Spotlight',
       },
       {
-         data:'/data/featured-cards.json'
+         // data:'/data/featured-cards.json'
       },
       {
          title: 'Popular Games',
@@ -46,7 +46,7 @@ const Main = () => {
          <Mobile onOpenModal={() => setModalMobileInstallOpen(true)}/>
          <Advertising {...propsData[3]} />
          <Advertising {...propsData[4]} />
-         <Advertising {...propsData[5]} />
+         <AdvertisingSlider {...propsData[5]} type="sale"/>
       </main>
 
       <ViewMore

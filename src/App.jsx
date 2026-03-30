@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import './App.css'
 
+import ScrollToTop from './components/scroll-to-top/ScrollToTop.jsx'
 import Auth from './pages/auth/Auth.jsx'
 import Cart from './pages/cart/Cart.jsx'
 import Home from './pages/home/Home.jsx'
@@ -11,11 +12,12 @@ import ProtectedRoute from './components/protected-route/ProtectedRoute.jsx'
 
 import Layout from './components/layout/Layout.jsx'
 import Wishlist from './pages/wishlist/Wishlist.jsx'
-
+import Support from './pages/support/Support.jsx'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path='/auth' element={<Auth />} />
 
@@ -23,6 +25,8 @@ function App() {
           <Route index  element={<Home />} />
           <Route path='/cart' element={<Cart />}/>
           <Route path='/game/:id' element={<Game />}/>
+          <Route path='/support' element={<Support />}/>
+
           <Route path='/wishlist' element={<Wishlist />}/>
 
           <Route path='/profile' element={
@@ -37,4 +41,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

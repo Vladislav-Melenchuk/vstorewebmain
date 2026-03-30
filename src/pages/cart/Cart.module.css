@@ -1,8 +1,13 @@
 .container {
+   /* min-height: 100vh;
+   height: 100%; */
+   /* max-width: 1440px; */
    min-height: 100vh;
    max-width: 1440px;
+   width: 100%;
    margin: 0 auto;
    padding: 36px;
+   box-sizing: border-box;
 }
 .title {
    color: var(--color-white);
@@ -124,3 +129,14 @@
   font-weight: 500;
 }
 
+@media (max-width: 1024px) {
+   .rowBox {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .sidebarTotalPrice {
+      width: 100%;
+      max-width: 400px;
+   }
+}

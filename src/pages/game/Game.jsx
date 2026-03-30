@@ -52,10 +52,38 @@ const Game = () => {
                <img src={game?.coverImageUrl} className={styles.image} alt={game?.title || 'game image'}/>
                <h4 className={styles.subtitle}>About this game</h4>
                <p className={styles.description}>{game.description}</p>
+
+               <h4 className={styles.subsubtitle}>System Requirements</h4>
+                <div className={styles.requirementsContainer}>
+                  <div className={styles.requirementsBox}>
+                     <h4>Minimum</h4>
+                     <ul className={styles.requirementsList}>
+                        <li>OS version: <span>Windows 10 64 bit</span></li>
+                        <li>Processor: <span>Intel Core i3-4150 / AMD FX-6300</span></li>
+                        <li>Memory: <span>1 GB RAM</span></li>
+                        <li>GPU: <span>Intel ® HD Graphics 620</span></li>
+                        <li>DirectX: <span>DirectX 11</span></li>
+                        <li>Storage: <span>800 MB</span></li>
+                        <li>Additional input device: <span>Gamepad</span></li>
+                     </ul>
+                  </div>
+
+                  <div className={styles.requirementsBox}>
+                     <h4>Recommended</h4>
+                     <ul className={styles.requirementsList}>
+                        <li>OS version: <span>Windows 10 64 bit</span></li>
+                        <li>Processor: <span>Intel Core i3-4150 / AMD FX-6300</span></li>
+                        <li>Memory: <span>1 GB RAM</span></li>
+                        <li>GPU: <span>Intel ® HD Graphics 620</span></li>
+                        <li>DirectX: <span>DirectX 11</span></li>
+                        <li>Storage: <span>800 MB</span></li>
+                        <li>Additional input device:<span>Gamepad</span></li>
+                     </ul>
+                  </div>
+               </div>
             </div>
 
             <div className={styles.sidebar}>
-
                <div className={styles.sidebarWrapper}>
                   <img src={img} />
                   <p>

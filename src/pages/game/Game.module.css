@@ -1,11 +1,13 @@
 .container {
-   height: 100vh;
+   height: 100%;
    max-width: 1640px;
    margin: 0 auto;
-   padding: 32px 0;
+   padding: 32px 64px;
+   /* border: 2px solid green; */
 }
 .wrapper {
    display: flex;
+   /* border: 2px solid orange; */
 }
 .mainContainer {
    flex: 2;
@@ -32,6 +34,13 @@
    font-weight: 700;
    margin-bottom: 36px;
 }
+.subsubtitle {
+   color: var(--color-white);
+   font-size: 32px;
+   font-weight: 700;
+   margin-bottom: 24px;
+   margin-top: 40px;
+}
 .description {
    color: var(--color-white);
    opacity: 70%;
@@ -44,7 +53,6 @@
    align-items: flex-start;
    justify-content: center;
    padding-left: 26px;
-
 }
 .sidebarWrapper img {
    width: 100%;
@@ -77,4 +85,33 @@
    color: var(--color-white);
    font-size: 20px;
    font-weight: 700;
+}
+.requirementsContainer {
+   display: flex;
+   justify-content: space-between;
+}
+.requirementsBox {
+   width: 100%;
+}
+.requirementsBox h4 {
+   color: var(--color-white);
+   font-size: 18px;
+   font-weight: 800;
+   margin-bottom: 16px;
+}
+.requirementsList {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 4px;
+   width: 100%;
+}
+.requirementsList li {
+   color: rgba(255, 255, 255, 0.7);
+   font-size: 14px;
+   font-size: 700;
+}
+
+.requirementsList li span {
+   color: rgba(255, 255, 255, 1.0);
 }

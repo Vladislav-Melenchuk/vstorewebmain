@@ -1,17 +1,17 @@
 .container {
    height: 100vh;
-   /* max-width: 1640px; */
    width: 1440px;
    margin: 0 auto;
-   padding: 32px 0;
-   border: 2px solid var(--color-white);
+   padding: 32px 64px;
 }
 .userBox {
    position: relative;
    display: flex;
    align-items: center;
    margin-bottom: 36px;
-   border: 2px solid pink;
+   border: 2px solid rgba(255, 255, 255, 0.6);
+   padding: 12px 24px;
+   border-radius: 8px;
 }
 .userBox img {
   width: 178px;
@@ -21,12 +21,13 @@
 .titleBox {
    display: flex;
    flex-direction: column;
+   gap: 12px;
    margin-right: 126px;
 }
 .titleBox span {
    display: inline-block;
    color: var(--color-white);
-   font-size: 28px;
+   font-size: 24px;
    font-weight: 500;
 }
 .greenSpan {
@@ -39,9 +40,7 @@
    font-size: 48px;
    font-weight: 500;
 }
-.gamesBox {
 
-}
 .gamesBox p {
    color: var(--color-white);
    opacity: 80%;
@@ -77,4 +76,117 @@ h4 {
    font-size: 32px;
    font-weight: 800;
    margin-bottom: 24px;
+}
+.passwordBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.passwordBox input {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-white);
+  background: transparent;
+  color: var(--color-white);
+  font-size: 16px;
+}
+
+.passwordBox input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.inputBox {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   margin-bottom: 36px;
+   border: 2px solid rgba(255, 255, 255, 0.6);
+   border-radius: 8px;
+   width: fit-content;
+   padding: 12px 24px;
+}
+.inputBox h4 {
+   color: var(--color-white);
+   font-size: 32px;
+}
+.changeBox {
+   display: flex;
+   gap: 32px;
+   align-items: flex-start;
+}
+.bttnActionBox {
+   display: flex;
+   gap: 12px;
+}
+.bttnAction {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.bttnAction:active {
+  transform: scale(0.95);
+}
+.titleBox input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.titleBox input {
+   padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-white);
+  background: transparent;
+  color: var(--color-white);
+  font-size: 16px;
+}
+.uploadBtn {
+  padding: 10px 16px;
+  border: 1px solid var(--color-white);
+  border-radius: 8px;
+  color: var(--color-white);
+  cursor: pointer;
+  width: fit-content;
+}
+
+.uploadBtn:hover {
+  background: rgba(255,255,255,0.1);
+}
+.gamesSection {
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+}
+.gamesSection h2 {
+   color: var(--color-white);
+   font-size: 32px;
+   font-weight: 700;
+   margin-bottom: 24px;
+}
+.block {
+  flex: 1;
+}
+.block p {
+  color: var(--color-white);
+  font-size: 22px;
+  font-weight: 800;
+}
+.gamesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.gameItem {
+  padding: 18px 24px;
+  background: var(--bg-header);
+  /* background: #393E46; */
+  color: var(--color-white);
+  border-radius: 8px;
+  width: 75%;
 }

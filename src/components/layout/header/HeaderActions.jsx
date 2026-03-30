@@ -54,16 +54,6 @@ const IconLink = styled(NavLink)`
 `;
 
 export const HeaderActions = ({ actionIcons, onUserClick, onSignIn, onLogout, isAuth, onOpenLang, onOpenDownload, user }) => {
-  // const handleClick = (icon) => {
-  //   if (icon.type === 'user') {
-  //     onUserClick();
-  //   }
-
-  //   if (icon.type === 'modal') {
-  //     onOpenLang();
-  //   }
-  // };
-
   return (
     <ActionsWrapper>
       <ul>

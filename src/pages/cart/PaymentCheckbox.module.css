@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--color-black);
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  margin-bottom: 14px;
+}
+
+.active {
+  border: 2px solid var(--color-black);
+}
+.active .checkbox {
+  background: var(--color-green);
+}
+.active .content {
+  color: var(--color-black);
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  background: #878b8f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.check {
+  font-size: 14px;
+  color: var(--color-black) !important;
+}
+
+.content {
+  color: var(--color-black);
+}

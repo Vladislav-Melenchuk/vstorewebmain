@@ -5,10 +5,14 @@ import { useContext, useEffect, useState } from 'react'
 import { useMemo } from 'react';
 import { AuthContext } from '../../context/AuthContext'
 import { getCart, removeFromCart, moveToWishlist } from '../../utils/cart.js'
+import { createOrder } from '../../utils/order.js'
+import CheckoutModal from './CheckoutModal.jsx';
+
 
 const Cart = () => {
    const { token } = useContext(AuthContext);
    const [cartItems, setCartItems] = useState([]);
+   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
    const total = useMemo(() => {
       return cartItems.reduce((acc, item) => acc + (item.finalPrice || item.price), 0);
@@ -35,6 +39,26 @@ const Cart = () => {
    const handleMoveToWishlist = async (game) => {
       await moveToWishlist(game, token);
       setCartItems(await getCart(token));
+   };
+
+   const handleCheckout = async () => {
+      if (!token) {
+         alert('Нужно войти в аккаунт');
+         return;
+      }
+
+      try {
+         const order = await createOrder(token);
+         console.log(order);
+
+         setCartItems([]);
+         setIsCheckoutOpen(false);
+
+         alert('Заказ успешно создан!');
+      } catch (e) {
+         console.error(e);
+         alert('Ошибка при оформлении заказа');
+      }
    };
 
    return (
@@ -92,7 +116,15 @@ const Cart = () => {
                <p className={styles.disclaimer}>
                   Of their respective owners in the US and other countries. VAT included in all prices where applicable
                </p>
-               <Button title='Check Out' variant='primary' size='xlarge' className={styles.checkoutButton}/>
+               <Button title='Check Out' variant='primary' size='xlarge' className={styles.checkoutButton} onClick={() => setIsCheckoutOpen(true)}/>
+
+               <CheckoutModal
+   isOpen={isCheckoutOpen}
+   onClose={() => setIsCheckoutOpen(false)}
+   cartItems={cartItems}
+   total={total}
+   onCheckout={handleCheckout}
+/>
             </div>
          </div>
       </div>

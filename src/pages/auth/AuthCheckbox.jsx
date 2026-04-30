@@ -34,8 +34,8 @@ const Checkbox = styled.div`
    }
 `;
 
-export const AuthCheckbox = ({checked, onChange}) => (
-   <Checkbox>
+export const AuthCheckbox = ({checked, onChange, className}) => (
+   <Checkbox className={className}>
       <input type="checkbox" 
          id='verifyAge' 
          name='verifyAge'

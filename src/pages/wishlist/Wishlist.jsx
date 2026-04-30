@@ -116,17 +116,14 @@ const Wishlist = () => {
                         UAH {game.price}
                       </p>
                     )}
-
                     </div>
                   </div>
-
                 </li>
               )
             })}
           </ul>
         )}
       </div>
-
     </div>
   )
 }

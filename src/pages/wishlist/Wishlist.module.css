@@ -3,7 +3,6 @@
   /* width: 1440px; */
   margin: 0 auto;
   padding: 36px;
-  
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
@@ -141,7 +140,6 @@ ul {
   font-size: 26px;
   font-weight: 500;
 }
-
 
 @media (max-width: 768px) {
   .title {

@@ -42,7 +42,6 @@ const EditProfile = ({
         <Button title="Save" onClick={handleSave} />
         <Button title="Cancel" onClick={handleCancel} />
       </div>
-
     </div>
   )
 }

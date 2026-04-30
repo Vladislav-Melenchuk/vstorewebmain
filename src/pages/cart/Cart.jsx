@@ -119,12 +119,12 @@ const Cart = () => {
                <Button title='Check Out' variant='primary' size='xlarge' className={styles.checkoutButton} onClick={() => setIsCheckoutOpen(true)}/>
 
                <CheckoutModal
-   isOpen={isCheckoutOpen}
-   onClose={() => setIsCheckoutOpen(false)}
-   cartItems={cartItems}
-   total={total}
-   onCheckout={handleCheckout}
-/>
+                  isOpen={isCheckoutOpen}
+                  onClose={() => setIsCheckoutOpen(false)}
+                  cartItems={cartItems}
+                  total={total}
+                  onCheckout={handleCheckout}
+               />
             </div>
          </div>
       </div>

@@ -43,7 +43,6 @@ const UserInfo = ({ user, onEdit, onChangePassword, userPlus, block, libraryLeng
           />
         </div>
       </div>
-
     </div>
   )
 }

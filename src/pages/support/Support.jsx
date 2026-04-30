@@ -23,7 +23,6 @@ const Support = () => {
       { name: "frequent questions", id: "collapseEight" },
     ];
 
-    // если очистили поиск — закрываем всё
     if (q.length < 2) {
       document.querySelectorAll(".accordion-collapse").forEach((el) => {
         Collapse.getOrCreateInstance(el).hide();

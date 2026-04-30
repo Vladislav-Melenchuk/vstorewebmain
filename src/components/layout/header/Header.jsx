@@ -14,17 +14,21 @@ import { HeaderNavigation } from './HeaderNavigation.jsx';
 import { Search } from './Search.jsx';
 import { HeaderActions } from './HeaderActions.jsx';
 import Download from '../../modals/download/Download.jsx';
+import Discover from '../../modals/discover/Discover.jsx';
+import News from '../../modals/news/News.jsx';
 
 const Header = () => {
   const navigate = useNavigate();
   const { token, user, logout } = useContext(AuthContext);
   const [langOpen, setLangOpen] = useState(false);
   const [downloadOpen, setDownloadOpen] = useState(false);
+  const [discoverOpen, setDiscoverOpen] = useState(false);
+  const [newsOpen, setNewsOpen] = useState(false);
 
   const links = [
-    { text: 'Discover', path: '/discover' },
+    { text: 'Discover', path: '/discover', action: 'discoverModal' },
     { text: 'Support', path: '/support' },
-    { text: 'News', path: '/news' },
+    { text: 'News', path: '/news', action: 'newsModal' },
   ];
 
   const actionIcons = [
@@ -57,7 +61,10 @@ const Header = () => {
       <div className={styles.container}>
         <div className={styles.logoNavInputWrapper}>
           <Logo />
-          <HeaderNavigation links={links} />
+          <HeaderNavigation 
+              links={links}
+              onOpenDiscover={() => setDiscoverOpen(true)}
+              onOpenNews={() => setNewsOpen(true)} />
           <Search />
         </div>
 
@@ -81,6 +88,14 @@ const Header = () => {
     <Download    
       isOpen={downloadOpen}
       onClose={() => setDownloadOpen(false)} />
+
+    <Discover
+        isOpen={discoverOpen}
+        onClose={() => setDiscoverOpen(false)} />
+
+    <News
+      isOpen={newsOpen}
+      onClose={() => setNewsOpen(false)} />
   </>
   );
 };

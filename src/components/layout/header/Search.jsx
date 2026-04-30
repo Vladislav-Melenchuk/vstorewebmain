@@ -32,10 +32,12 @@ const SearchWrapper = styled.div`
    }
 `;
 
-export const Search = ({ placeholder = 'search store', className }) => (
+export const Search = ({ placeholder = 'search store', className, onKeyDown }) => (
    <SearchWrapper className={className}>
       <img src={searchIcon} alt="search icon"/>
       <input type='text'
-             placeholder={placeholder}/>
+             placeholder={placeholder}
+             onKeyDown={onKeyDown}
+             />
    </SearchWrapper>
 )

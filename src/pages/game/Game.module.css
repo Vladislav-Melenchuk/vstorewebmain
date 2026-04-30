@@ -98,8 +98,10 @@
    font-size: 18px;
    font-weight: 800;
    margin-bottom: 16px;
+   margin-left: 32px;
 }
 .requirementsList {
+   width: 100%;
    display: flex;
    flex-direction: column;
    align-items: flex-start;
@@ -111,7 +113,6 @@
    font-size: 14px;
    font-size: 700;
 }
-
 .requirementsList li span {
    color: rgba(255, 255, 255, 1.0);
 }

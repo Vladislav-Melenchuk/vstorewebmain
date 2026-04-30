@@ -50,3 +50,62 @@ span {
   font-weight: 900;
   margin-bottom: 36px;
 }
+
+
+
+/* контейнер */
+:global(.accordion) {
+  background: transparent;
+  border: none;
+}
+
+/* item */
+:global(.accordion-item) {
+  /* background: var(--color-black); */
+  background: #393E46;
+  border: none;
+  padding: 32px 20px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+/* кнопка (заголовок) */
+:global(.accordion-button) {
+  background: none;
+  color: var(--color-white);
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* убрать синий фон при открытии */
+:global(.accordion-button:not(.collapsed)) {
+  background: none;
+  color: var(--color-white);
+  box-shadow: none;
+}
+:global(.accordion-button:yes(.collapsed)) {
+  background: none;
+  color: var(--color-white);
+  box-shadow: none;
+}
+
+:global(.accordion-button::after) {
+  filter: invert(1); /* делает её белой */
+}
+
+:global(.accordion-button:focus) {
+  box-shadow: none;
+  outline: none;
+}
+
+:global(.accordion-body) {
+  padding: 10px 0;
+  color: var(--color-white);
+  opacity: 70%;
+  font-size: 20px;
+  font-weight: 400;
+}

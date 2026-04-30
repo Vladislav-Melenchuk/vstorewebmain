@@ -6,6 +6,7 @@
    margin-top: auto;
    border: none;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
+      outline: none;
 }
 .button:hover {
    cursor: pointer;
@@ -14,6 +15,7 @@
 .button:active {
    transform: scale(0.95);
 }
+
 .title {
    margin-right: 6px;
    display: inline-block;

@@ -68,7 +68,7 @@
 .discount {
    background: var(--color-green);
    color: var(-color-black);
-   font-size: 16px;
+   font-size: 14px;
    padding: 6px;
    border-radius: 20px;
    width: 46px;

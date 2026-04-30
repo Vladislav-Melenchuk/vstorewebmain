@@ -24,16 +24,55 @@ const NavList = styled.ul`
   }
 `;
 
-export const HeaderNavigation = ({links}) => (
+// export const HeaderNavigation = ({links}) => (
+//    <NavigationBox>
+//       <NavList>
+//       {links.map((linkItem, index) => (
+//          <li key={index}>
+//             <NavLink to={linkItem.path} className={({ isActive }) => isActive ? 'active' : ''}>
+//                {linkItem.text}
+//             </NavLink>
+//          </li>
+//       ))}
+//       </NavList>
+//    </NavigationBox>
+// );
+
+export const HeaderNavigation = ({ links, onOpenDiscover, onOpenNews }) => (
    <NavigationBox>
       <NavList>
-      {links.map((linkItem, index) => (
-         <li key={index}>
-            <NavLink to={linkItem.path} className={({ isActive }) => isActive ? 'active' : ''}>
-               {linkItem.text}
-            </NavLink>
-         </li>
-      ))}
+         {links.map((linkItem, index) => (
+            <li key={index}>
+
+               {linkItem.action ? (
+                  <a
+                     href="#"
+                     onClick={(e) => {
+                        e.preventDefault();
+
+                        if (linkItem.action === 'discoverModal') {
+                           onOpenDiscover();
+                        }
+
+                        if (linkItem.action === 'newsModal') {
+                           onOpenNews();
+                        }
+                     }}
+                     style={{ cursor: 'pointer' }}
+                  >
+                     {linkItem.text}
+                  </a>
+               ) : (
+                  <NavLink
+                     to={linkItem.path}
+                     className={({ isActive }) => isActive ? 'active' : ''}
+                  >
+                     {linkItem.text}
+                  </NavLink>
+               )}
+
+            </li>
+         ))}
       </NavList>
    </NavigationBox>
 );
